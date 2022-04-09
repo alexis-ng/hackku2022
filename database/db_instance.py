@@ -2,7 +2,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 
-cred = credentials.Certificate("/Users/bhavikgoplani/Documents/Personal Projects/hackku2022/hack-ku-3bc4e-firebase-adminsdk-mxlpu-91994f8fd4.json")
+cred = credentials.Certificate("database/hack-ku-3bc4e-firebase-adminsdk-mxlpu-91994f8fd4.json")
 firebase_admin.initialize_app(cred)
 
 db = firestore.client()
