@@ -22,4 +22,4 @@ def voice():
     return str(resp)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="18.208.60.216", debug=True)
