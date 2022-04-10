@@ -7,16 +7,8 @@ def main():
     information = []
     server_info = TwilioInformation(information)
     obj = server_info.get_link_info()
-    # database = Database(server_info.get_applicant_status(), obj)
-
-
-
-    pass
-
-
-
-
-
+    database = Database(server_info.get_applicant_status(), obj)
+    
 
 
 
