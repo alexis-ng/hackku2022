@@ -29,10 +29,11 @@ pip install firebase-admin
 
 pip install speechRecognition
 ```
+### Twilio hosted on AWS Server
+Twillio was used to create an automated calling system that interacts with the job applicants and the companies/job listings. The backend server is hosted on AWS.
 
-### Setting up Twilio & its Server
-
-### Setting up Google Cloud & Firestore
+### Firestore Database 
+Firestore is a real-time NoSQL Database that stores job applicants and listings. It queries based on age, proximity to the job, and qualifications. 
 
 ## Usage
 To use CalledIn, much of the installation & configuration requirements must be followed in order to use. 
@@ -70,4 +71,4 @@ class Job_Seeker: #applicant
 Alexis Ng - [@alexis-ng](https://github.com/alexis-ng/) <br>
 Bhavik Goplani - [bhavik-goplani](https://github.com/bhavik-goplani)<br>
 Suhaan Syed - [SuhaanSyed](https://github.com/SuhaanSyed)<br>
-Vinny {Last Name} <br>
+Vinayak Jha - [realVinayak](https://github.com/realVinayak) <br>
