@@ -12,26 +12,26 @@
 - Matches skills of an applicant pool with job postings
 
 
-## Table of Contents
-
 ## Built With
 
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.9-blue"></a>  <a href="https://firebase.google.com/"><img src="https://img.shields.io/badge/Firebase-Database-yellow"></a>  <a href="https://nodejs.org/en/"><img src="https://img.shields.io/badge/Node.js-17.8-green"></a>  <a href="https://www.twilio.com/"><img src="https://img.shields.io/badge/Twilio-red"></a>
 
 ## Installation & Running
-'''zsh
+
+```bash
 pip install nltk
 
 pip install firebase-admin
 
-pip install speechrecognition
-'''
+pip install speechRecognition
+```
 
 ### Setting up Twilio & its Server
 
 ### Setting up Google Cloud & Firestone
 
 ## Usage
+How to Contribute?
 
 ## Authors
 Alexis Ng - [@alexis-ng](https://github.com/alexis-ng/) <br>
