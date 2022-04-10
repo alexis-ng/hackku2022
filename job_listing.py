@@ -33,7 +33,7 @@ class JobListing:
     def get_keywords(self):
         return self._keywords
     
-    def set_desciption(self, desc):
+    def set_description(self, desc):
         self._description = desc
     def get_description(self):
         return self._description

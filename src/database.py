@@ -35,6 +35,15 @@ class Database:
 
   def set_job_listing(self):
     job_listing_ref = self._db.collection(u'Job_Listings').document(self._job_listing.get_phone_number())
+    job_listing_ref.set({
+      u'Phone_number': self._job_listing.get_phone_number(),
+      u'Name': self._job_listing.get_name(),
+      u'Min_age': self._job_listing.get_min_age(),
+      u'Zipcode': self._job_listing.get_zipcode(),
+      u'Keywords': self._job_listing.get_keywords(),
+      u'Description': self._job_listing.get_description(),
+      u'Links': self._job_listing.get_links()
+    })
 
   def run(self):
     if self._is_applicant:
