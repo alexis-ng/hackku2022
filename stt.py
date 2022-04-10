@@ -15,3 +15,4 @@ class Recognize:
         query = str(self._r.recognize_google(audio,  language='en-US'))
         return query
         
+
