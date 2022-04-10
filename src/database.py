@@ -34,7 +34,7 @@ class Database:
       u'Name': self._applicant.get_name(),
       u'Age': self._applicant.get_age(),
       u'Zipcode': self._applicant.get_zipcode(),
-      u'Distance': self._applicant.get_distance,
+      u'Distance': self._applicant.get_distance(),
       u'Keywords': self._applicant.get_keywords(),
       u'Description': self._applicant.get_description(),
       u'Links': self._applicant.get_links()
