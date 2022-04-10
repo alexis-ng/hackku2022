@@ -1,6 +1,6 @@
 import requests
 import math
-GOOGLE_API_KEY = 'AIzaSyBoclwNkaJnjOw1HmX80-D13zWw275PZY4' 
+GOOGLE_API_KEY = 
 
 def extract_lat_long_via_address(address_or_zipcode):
     lat, lng = None, None
