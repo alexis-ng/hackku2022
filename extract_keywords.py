@@ -8,17 +8,8 @@ from keybert import KeyBERT
 
 class Extractor:
 
-    def __init__(self, file_name) -> None:
-        self._file_name = file_name
-        self._description = ""
-        with open(self._file_name, "r", encoding="utf8") as file:
-            for line in file:
-                self._description += line
-
-    def update_description(self, file_name):
-        with open(file_name, "r", encoding="utf8") as file:
-            for line in file:
-                self._description += line
+    def __init__(self, desc) -> None:
+        self._description = desc
         
     
     def clean(self):
