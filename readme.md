@@ -1,5 +1,5 @@
-#  CallIn
-*CallIn is a job matching program meant to connect employers and job seekers in areas without internet & or access to job boards like LinkedIn, Glassdoor, etc*
+#  CalledIn
+*CalledIn is a job matching program meant to connect employers and job seekers in areas without internet & or access to job boards like LinkedIn, Glassdoor, etc*
 ## About the Project
 #### Applicant Side
 - Has an automated voice calling system through Twilio
@@ -35,7 +35,7 @@ pip install speechRecognition
 ### Setting up Google Cloud & Firestone
 
 ## Usage
-To use CallIn, much of the installation & configuration requirements must be followed in order to use. 
+To use CalledIn, much of the installation & configuration requirements must be followed in order to use. 
 | Configuring Call Fields|
 |---------------|
 |Create your calling information in [job_seeker.py](https://github.com/alexis-ng/hackku2022/blob/main/job_seeker.py), [job_listing.py](https://github.com/alexis-ng/hackku2022/blob/main/job_listing.py), and [src/database.py](https://github.com/alexis-ng/hackku2022/blob/main/src/database.py). Make sure the fieldnames(member variables) match!|
