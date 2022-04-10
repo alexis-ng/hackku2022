@@ -6,7 +6,7 @@ Project Description
 
 ## Software & Programming Languages
 '
-<image>https://img.shields.io/badge/3.9-Python-blue</image>
+<img src="https://img.shields.io/badge/3.9-Python-blue">
 '
 
 Python 3.9
