@@ -1,5 +1,5 @@
 #  HACKKU2022 Project
-Create a job matching program meant to connect employers and job seekers in areas without internet & or access to job boards like LinkedIn, Glassdoor, etc
+*Create a job matching program meant to connect employers and job seekers in areas without internet & or access to job boards like LinkedIn, Glassdoor, etc*
 ## About the Project
 #### Applicant Side
 - Has an automated voice calling system through Twilio
@@ -16,14 +16,14 @@ Create a job matching program meant to connect employers and job seekers in area
 
 ## Built With
 
-<img src="https://img.shields.io/badge/Python-3.9-blue">  <img src="https://img.shields.io/badge/Firebase-Database-yellow">  <img src="https://img.shields.io/badge/Node.js-17.8-green">  <img src="https://img.shields.io/badge/Twilio-red">
+<a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.9-blue"></a>  <a href="https://firebase.google.com/"><img src="https://img.shields.io/badge/Firebase-Database-yellow"></a>  <a href="https://nodejs.org/en/"><img src="https://img.shields.io/badge/Node.js-17.8-green"></a>  <a href="https://www.twilio.com/"><img src="https://img.shields.io/badge/Twilio-red"></a>
 
 ## Installation & Running
-
-'''
-bash
+'''zsh
 pip install nltk
+
 pip install firebase-admin
+
 pip install speechrecognition
 '''
 
@@ -34,7 +34,7 @@ pip install speechrecognition
 ## Usage
 
 ## Authors
-Alexis Ng - @alexis-ng
-Bhavik Goplani
-Suhaan Syed
-Vin
+Alexis Ng - [@alexis-ng](https://github.com/alexis-ng/) <br>
+Bhavik Goplani - [bhavik-goplani](https://github.com/bhavik-goplani)<br>
+Suhaan Syed - [SuhaanSyed](https://github.com/SuhaanSyed)<br>
+Vinny {Last Name} <br>
