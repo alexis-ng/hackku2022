@@ -5,7 +5,11 @@ Project Description
 ## Table of Contents
 
 ## Software & Programming Languages
-https://img.shields.io/badge/3.9-Python-blue
+'
+<image>https://img.shields.io/badge/3.9-Python-blue</image>
+'
+
+Python 3.9
 Firebase (& Firestore)
 Node.js
 Twilio
@@ -13,6 +17,7 @@ Twilio
 '''
 pip install nltk
 pip install firebase-admin
+
 '''
 ## Usage
 
