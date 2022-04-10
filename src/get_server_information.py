@@ -1,7 +1,7 @@
 # from unicodedata import name
 # from numpy import extract
 import requests
-from stt import Recognize
+from src.stt import Recognize
 from job_seeker import Job_Seeker
 from extract_keywords import Extractor
 from job_listing import JobListing

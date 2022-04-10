@@ -1,3 +1,4 @@
+from turtle import distance
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
@@ -5,7 +6,7 @@ from geocoding import geo
 
 class Database:
   def __init__(self, is_applicant, obj) -> None:
-    cred = credentials.Certificate("database/hack-ku-3bc4e-firebase-adminsdk-mxlpu-91994f8fd4.json")
+    cred = credentials.Certificate("src/hack-ku-3bc4e-firebase-adminsdk-mxlpu-91994f8fd4.json")
     firebase_admin.initialize_app(cred)
     self._db = firestore.client()
     self._is_applicant = is_applicant
@@ -15,11 +16,40 @@ class Database:
       self._job_listing = obj
   
   def get_applicant(self):
-    pass
+    min_age = self._job_listing.get_min_age()
+    zipcode = self._job_listing.get_zipcode()
+    keywords = self._job_listing.get_keywords()
+    applicants_list = []
+
+    applicants_ref = self._db.collection(u'Applicants')
+    query = applicants_ref.where(u'Keywords', u'array_contains_any', keywords).where(u'Age', u'>=', min_age)
+    apps = query.stream() 
+    
+    for app in apps:
+      distance = geo.haversine(geo.extract_lat_long_via_address(app.to_dict()['Zipcode']),geo.extract_lat_long_via_address(zipcode))
+      if distance < app.to_dict()['Distance']:
+        applicants_list.append(app.to_dict())
+    
+    return applicants_list
 
   def get_job_listing(self):
-    pass
+    age = self._applicant.get_age()
+    zipcode = self._applicant.get_zipcode()
+    dist = self._applicant.get_distance()
+    keywords = self._applicant.get_keywords()
+    job_listing_list = []
 
+    job_listing_ref = self._db.collection(u'Job_Listings')
+    query = job_listing_ref.where(u'Keywords', u'array_contains_any', keywords).where(u'Min_age', u'<=', age)
+    jobs = query.stream()
+
+    for job in jobs:
+      distance = geo.haversine(geo.extract_lat_long_via_address(zipcode),geo.extract_lat_long_via_address(job.to_dict()['Zipcode']))
+      if distance < dist:
+        job_listing_list.append(job.to_dict())
+
+    return job_listing_list
+    
   def set_applicant(self):
     applicant_ref = self._db.collection(u'Applicant').document(self._applicant.get_phone_number())
     applicant_ref.set({
@@ -27,7 +57,7 @@ class Database:
       u'Name': self._applicant.get_name(),
       u'Age': self._applicant.get_age(),
       u'Zipcode': self._applicant.get_zipcode(),
-      u'Distance': self._applicant.get_distance,
+      u'Distance': self._applicant.get_distance(),
       u'Keywords': self._applicant.get_keywords(),
       u'Description': self._applicant.get_description(),
       u'Links': self._applicant.get_links()
@@ -47,26 +77,8 @@ class Database:
 
   def run(self):
     if self._is_applicant:
-      pass
+      job_listings_return = self.get_job_listing()
+      return job_listings_return
     else:
-      pass
-    
-    
-    
-    
-
-    # doc_ref = db.collection(u'Job_List').document(u'Job_3')
-    # doc_ref.set({
-    #     u'Age': 33,
-    #     u'Location': {
-    #       u'City': u'Olathe', 
-    #       u'Zip_code': 66061
-    #       },
-    #     u'Description': u'We are looking for a full time mechanic'
-    # })
-
-    # users_ref = db.collection(u'Job_List')
-    # docs = users_ref.stream()
-
-    # for doc in docs:
-    #     print(f'{doc.id} => {doc.to_dict()}')
+      applicants_return = self.get_applicant()
+      return applicants_return
