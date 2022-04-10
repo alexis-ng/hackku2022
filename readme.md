@@ -30,10 +30,6 @@ pip install firebase-admin
 pip install speechRecognition
 ```
 
-### Setting up Twilio & its Server
-
-### Setting up Google Cloud & Firestone
-
 ## Usage
 To use CalledIn, much of the installation & configuration requirements must be followed in order to use. 
 | Configuring Call Fields|
