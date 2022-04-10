@@ -3,22 +3,9 @@ from database import Database
 # get information
 
 
-def main():
-    information = []
+def info(list):
+    information = list
     server_info = TwilioInformation(information)
     obj = server_info.get_link_info()
-    # database = Database(server_info.get_applicant_status(), obj)
-
-
-
-    pass
-
-
-
-
-
-
-
-
-if __name__ == "__main__":
-    main()
+    database = Database(server_info.get_applicant_status(), obj)
+    x = database.run()
