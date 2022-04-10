@@ -20,7 +20,8 @@ Create a job matching program meant to connect employers and job seekers in area
 
 ## Installation & Running
 
-'''bash
+'''
+bash
 pip install nltk
 pip install firebase-admin
 pip install speechrecognition
