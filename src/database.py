@@ -5,7 +5,7 @@ from geocoding import geo
 
 class Database:
   def __init__(self, is_applicant, obj) -> None:
-    cred = credentials.Certificate("database/hack-ku-3bc4e-firebase-adminsdk-mxlpu-91994f8fd4.json")
+    cred = credentials.Certificate("src/hack-ku-3bc4e-firebase-adminsdk-mxlpu-91994f8fd4.json")
     firebase_admin.initialize_app(cred)
     self._db = firestore.client()
     self._is_applicant = is_applicant
@@ -15,7 +15,14 @@ class Database:
       self._job_listing = obj
   
   def get_applicant(self):
-    pass
+    min_age = self._job_listing.get_min_age()
+    zipcode = self._job_listing.get_zipcode()
+    keywords = self._job_listing.get_keywords()
+
+    applicants_ref = self._db.collection(u'Applicants')
+    query = applicants_ref.where(u'Age', u'>=', min_age)
+    docs = query.stream()
+    
 
   def get_job_listing(self):
     pass
@@ -47,12 +54,9 @@ class Database:
 
   def run(self):
     if self._is_applicant:
-      pass
+      job_listings_return = self.get_job_listing()
     else:
-      pass
-    
-    
-    
+      applicants_return = self.get_applicant()
     
 
     # doc_ref = db.collection(u'Job_List').document(u'Job_3')

@@ -23,9 +23,6 @@ def extract_lat_long_via_address(address_or_zipcode):
         pass
     return [lat, lng]
 
-print(extract_lat_long_via_address(66061))
-
-
 def haversine(applicant_loc, employer_loc):
     radius = 3958.8
     lat1 = math.radians(applicant_loc[0])
@@ -40,5 +37,3 @@ def haversine(applicant_loc, employer_loc):
     c = 2*(math.atan2(math.sqrt(a), math.sqrt(1-a)))
     d = radius * c 
     return d
-
-print(haversine([38.9499492, -95.2658318], [38.9071042, -94.8728093]))
