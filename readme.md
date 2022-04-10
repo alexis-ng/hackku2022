@@ -17,7 +17,7 @@
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.9-blue"></a>  <a href="https://firebase.google.com/"><img src="https://img.shields.io/badge/Firebase-Database-yellow"></a>  <a href="https://nodejs.org/en/"><img src="https://img.shields.io/badge/Node.js-17.8-green"></a>  <a href="https://www.twilio.com/"><img src="https://img.shields.io/badge/Twilio-red"></a>  <a href="https://mapsplatform.google.com/"><img src="https://img.shields.io/badge/Google_Maps-API-darkgreen"></a>
 
 ## Installation & Configuration
-#### Prerequisites
+### Prerequisites
 - Have a public hosting site available
 - Create a Google [Firebase](Firebase.google.com) account
 - Create a [Twilio](twilio.com) account
@@ -42,7 +42,6 @@ To use CallIn, much of the installation & configuration requirements must be fol
 |Create your calling information in [job_seeker.py](https://github.com/alexis-ng/hackku2022/blob/main/job_seeker.py), [job_listing.py](https://github.com/alexis-ng/hackku2022/blob/main/job_listing.py), and [src/database.py](https://github.com/alexis-ng/hackku2022/blob/main/src/database.py). Make sure the fieldnames(member variables) match!|
 |Creating Keywords|
 |Check out [extract_keywords.py](https://github.com/alexis-ng/hackku2022/blob/main/extract_keywords.py) to set your own configurations. |
-
 
 
 
