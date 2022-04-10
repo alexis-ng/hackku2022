@@ -40,6 +40,28 @@ To use CallIn, much of the installation & configuration requirements must be fol
 |---------------|
 |Configuring Call Fields|
 |Create your calling information in [job_seeker.py](https://github.com/alexis-ng/hackku2022/blob/main/job_seeker.py), [job_listing.py](https://github.com/alexis-ng/hackku2022/blob/main/job_listing.py), and [src/database.py](https://github.com/alexis-ng/hackku2022/blob/main/src/database.py). Make sure the fieldnames(member variables) match!|
+|
+```python
+class JobListing: #employer
+    def __init__(self, phone_number) -> None:
+        self._phone_number = phone_number
+        self._name = ""
+        self._min_age = 0
+        self._zipcode = 0
+        self._keywords = []
+        self._description = ""
+        self._links = []
+class Job_Seeker: #applicant
+    def __init__(self, phone_number):
+        self._phone_number = phone_number
+        self._name = ""
+        self._age = 0
+        self._zipcode = 0
+        self._distance = 0
+        self._keywords = []
+        self._description = ""
+        self._links = {}
+```
 |Creating Keywords|
 |Check out [extract_keywords.py](https://github.com/alexis-ng/hackku2022/blob/main/extract_keywords.py) to set your own configurations. |
 
