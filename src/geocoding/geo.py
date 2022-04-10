@@ -24,16 +24,20 @@ def extract_lat_long_via_address(address_or_zipcode):
     return [lat, lng]
 
 def haversine(applicant_loc, employer_loc):
-    radius = 3958.8
-    lat1 = math.radians(applicant_loc[0])
-    lat2 = math.radians(employer_loc[0])
-    long1 = math.radians(applicant_loc[1])
-    long2 = math.radians(employer_loc[1])
-    delta_lat = math.radians(applicant_loc[0] - employer_loc[0])
-    delta_long = math.radians(applicant_loc[1] - employer_loc[1])
-    a = (math.sin(delta_lat/2)**2)\
-        + math.cos(lat1) * math.cos((lat2))\
-             *  (math.sin(delta_long/2)**2)
-    c = 2*(math.atan2(math.sqrt(a), math.sqrt(1-a)))
-    d = radius * c 
-    return d
+    try:
+        radius = 3958.8
+        lat1 = math.radians(applicant_loc[0])
+        lat2 = math.radians(employer_loc[0])
+        long1 = math.radians(applicant_loc[1])
+        long2 = math.radians(employer_loc[1])
+        delta_lat = math.radians(applicant_loc[0] - employer_loc[0])
+        delta_long = math.radians(applicant_loc[1] - employer_loc[1])
+        a = (math.sin(delta_lat/2)**2)\
+            + math.cos(lat1) * math.cos((lat2))\
+                 *  (math.sin(delta_long/2)**2)
+        c = 2*(math.atan2(math.sqrt(a), math.sqrt(1-a)))
+        d = radius * c 
+        return d
+    except:
+        d = 999999
+        return d

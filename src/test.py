@@ -21,8 +21,12 @@ zipcode = doc['Zipcode']
 print(min_age, keywords, zipcode)
 
 applicants_ref = db.collection(u'Applicants')
-query = applicants_ref.where(u'Age', u'>=', min_age).where(u'Keywords', u'array_contains_any', keywords)
+query = applicants_ref.where(u'Keywords', u'array_contains_any', keywords).where(u'Age', u'>=', min_age)
 print(query)
 docs = query.stream()
-# for doc in docs:
-#     print(f'{doc.id} => {doc.to_dict()}')
+for doc in docs:
+    distance = geo.haversine(geo.extract_lat_long_via_address(doc.to_dict()['Zipcode']),geo.extract_lat_long_via_address(zipcode))
+    if distance < doc.to_dict()['Distance']:
+        applicants_list.append(doc.to_dict())
+for app in applicants_list:
+    print(app)
