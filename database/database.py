@@ -1,6 +1,7 @@
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
+from geocoding.geo import extract_lat_long_via_address, haversine
 
 class Database:
   def __init__(self, is_applicant, obj) -> None:
@@ -35,7 +36,11 @@ class Database:
     })
 
   def set_job_listing(self):
-    pass
+    lawrence = 66044
+    overland_park = 66213
+    lat_long_law = extract_lat_long_via_address(lawrence)
+    lat_long_op = extract_lat_long_via_address(overland_park)
+    return haversine(lat_long_law, lat_long_op)
 
   def run(self):
     if self._is_applicant:
@@ -44,7 +49,7 @@ class Database:
       pass
     
     
-
+    
     
 
     # doc_ref = db.collection(u'Job_List').document(u'Job_3')
@@ -62,3 +67,6 @@ class Database:
 
     # for doc in docs:
     #     print(f'{doc.id} => {doc.to_dict()}')
+  def main(self):
+    print(self.set_job_listing())
+  main()
