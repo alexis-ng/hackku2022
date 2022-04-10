@@ -3,7 +3,7 @@
 ## About the Project
 #### Applicant Side
 - Has an automated voice calling system through Twilio
-- Take in the the voice data and transcribe it
+- Take in the voice data and transcribe it
 - Matches the skills of the applicant to job posts from corporates
 - Sends an SMS/Voice call message with information about the Job opportunities
   
@@ -32,7 +32,7 @@ pip install speechRecognition
 
 ### Setting up Twilio & its Server
 
-### Setting up Google Cloud & Firestone
+### Setting up Google Cloud & Firestore
 
 ## Usage
 To use CalledIn, much of the installation & configuration requirements must be followed in order to use. 
