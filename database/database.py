@@ -9,7 +9,7 @@ class Database:
     self._db = firestore.client()
     self._is_applicant = is_applicant
     if self._is_applicant:
-      self._applicants = obj
+      self._applicant = obj
     else:
       self._job_listing = obj
   
@@ -20,7 +20,19 @@ class Database:
     pass
 
   def set_applicant(self):
-    pass
+    applicant_ref = self._db.collection(u'Applicant').document(self._applicant.get_phone_number())
+    applicant_ref.set({
+      u'Phone_number': self._applicant.get_phone_number(),
+      u'Name': self._applicant.get_name(),
+      u'Age': self._applicant.get_age(),
+      u'Location': {
+        u'Zipcode': self._applicant.get_location()["zipcode"],
+        u'Distance': self._applicant.get_location(["distance"])
+      },
+      u'Keywords': self._applicant.get_keywords(),
+      u'Description': self._applicant.get_description(),
+      u'Links': self._applicant.get_links()
+    })
 
   def set_job_listing(self):
     pass
