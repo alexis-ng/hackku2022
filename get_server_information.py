@@ -31,24 +31,29 @@ class TwilioInformation:
         return extractor.extract()
 
 
-    def get_link_info(self, links):
+    def get_link_info(self):
         if self._is_applicant:
             # create a new applicant
             seeker = Job_Seeker(phone_number=self._phone_number)
             
-            name = self._get_info(links["name"])
-            age = int(self._get_info(links["age"]))
-            location = self._get_info(links["location"])
-            location = {"zipcode" : int(location.split(" ")[0]), "distance" : int(location.split(" ")[1])}
-            description = self._get_info(links["description"])
+            name = self._get_info(self._links["name"])
+            age = int(self._get_info(self._links["age"]))
+            zipcode = int(self._get_info(self._links["zipcode"]))
+            distance = self._get_info(self._links["distance"])
+            try:
+                distance = int(distance)
+            except:
+                distance = None
+            description = self._get_info(self._links["description"])
             keywords = self._extract_description(description)
 
             seeker.set_name(name)
             seeker.set_age(age)
-            seeker.set_location(location)
+            seeker.set_zipcode(zipcode)
+            seeker.set_distance(distance)
             seeker.set_desciption(description)
             seeker.set_keywords(keywords)
-            seeker.set_links = links[2]
+            seeker.set_links = self._links[2]
             
             return seeker
         
@@ -56,10 +61,10 @@ class TwilioInformation:
             # create a new job
             job = JobListing(phone_number=self._phone_number)
             
-            name = self._get_info(links["name"])
-            min_age = int(self._get_info(links["min_age"]))
-            zipcode = int(self._get_info(links["zipcode"]))
-            description = self._get_info(links["description"])
+            name = self._get_info(self._links["name"])
+            min_age = int(self._get_info(self._links["min_age"]))
+            zipcode = int(self._get_info(self._links["zipcode"]))
+            description = self._get_info(self._links["description"])
             keywords = self._extract_description(description)
 
             job.set_name(name)
@@ -67,7 +72,7 @@ class TwilioInformation:
             job.set_zipcode(zipcode)
             job.set_desciption(description)
             job.set_keywords(keywords)
-            job.set_links(links[2])
+            job.set_links(self._links[2])
 
             return job
 

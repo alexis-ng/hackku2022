@@ -3,7 +3,8 @@ class Job_Seeker:
         self._phone_number = phone_number
         self._name = ""
         self._age = 0
-        self._location = {}
+        self._zipcode = 0
+        self._distance = 0
         self._keywords = []
         self._description = ""
         self._links = {}
@@ -23,10 +24,15 @@ class Job_Seeker:
     def get_age(self):
         return self._age
 
-    def set_location(self, location:dict):
-        self._location = location
-    def get_location(self):
-        return self._location
+    def set_zipcode(self, zipcode):
+        self._zipcode = zipcode
+    def get_zipcode(self):
+        return self._zipcode
+    
+    def set_distance(self, distance):
+        self._distance = distance
+    def get_distance(self):
+        return self._distance
     
     def set_keywords(self, keywords):
         self._keywords = keywords
