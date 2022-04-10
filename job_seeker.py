@@ -1,6 +1,3 @@
-from re import A
-
-
 class Job_Seeker:
     def __init__(self, phone_number):
         self._phone_number = phone_number
