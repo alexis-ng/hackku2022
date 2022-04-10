@@ -3,7 +3,7 @@ class JobListing:
         self._phone_number = phone_number
         self._name = ""
         self._min_age = 0
-        self._location = ""
+        self._zipcode = 0
         self._keywords = []
         self._description = ""
         self._links = []
@@ -23,10 +23,10 @@ class JobListing:
     def get_min_age(self):
         return self._min_age
 
-    def set_location(self, location):
-        self._location = location
-    def get_location(self):
-        return self._location
+    def set_zipcode(self, zipcode):
+        self._zipcode = zipcode
+    def get_zipcode(self):
+        return self._zipcode
     
     def set_keywords(self, keywords):
         self._keywords = keywords
