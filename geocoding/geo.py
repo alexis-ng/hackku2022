@@ -42,7 +42,3 @@ def haversine(applicant_loc, employer_loc):
     return d
 
 print(haversine([38.9499492, -95.2658318], [38.9071042, -94.8728093]))
-
-
-
-
