@@ -63,7 +63,7 @@ class Job_Seeker: #applicant
 ```
 |Creating Keywords|
 |------------------|
-|Check out [extract_keywords.py](https://github.com/alexis-ng/hackku2022/blob/main/extract_keywords.py) to set your own configurations. Extract_Keywords uses nltk  |
+|Check out [extract_keywords.py](https://github.com/alexis-ng/hackku2022/blob/main/extract_keywords.py) to set your own configurations. Extract_Keywords uses [nltk](https://www.nltk.org/) toolkit to analyze the transcribed data |
 
 
 ## Authors
